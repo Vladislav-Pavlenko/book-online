@@ -35,7 +35,6 @@ export async function POST(req: NextRequest) {
         fullName: data.fullName,
         email: data.email,
         password: hashedPassword,
-        gender: data.gender,
       },
     });
 

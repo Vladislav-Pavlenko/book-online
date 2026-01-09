@@ -11,6 +11,7 @@ export interface User {
   birthDate?: Date;
   createdAt: Date;
   updatedAt: Date;
+  signedIn?: boolean;
 
   comments?: Comment[];
   likes?: Like[];

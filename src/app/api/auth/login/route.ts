@@ -44,13 +44,15 @@ export async function POST(req: NextRequest) {
     const token = jwt.sign({ userId: user.id }, JWT_SECRET, {
       expiresIn: '7d',
     });
+
+    const maxAge = body.signedIn ? 60 * 60 * 24 * 30 : undefined;
     const res = NextResponse.json({ message: 'Login successful' });
     res.cookies.set({
       name: 'token',
       value: token,
       httpOnly: true,
       path: '/',
-      maxAge: 60 * 60 * 24 * 7,
+      maxAge: maxAge,
       sameSite: 'lax',
       secure: process.env.NODE_ENV === 'production',
     });

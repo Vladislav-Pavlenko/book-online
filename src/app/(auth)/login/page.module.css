@@ -1,0 +1,65 @@
+.main{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15.6%;
+    z-index: 10;
+    width: 100%;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.container{
+    width: 440px;
+}
+
+@media screen and (max-width: 1440px){
+    .main{
+        padding-right: 10%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .container{
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 16px;
+    }
+}
+
+@media screen and (max-width: 1095px){
+    .main{
+        padding-right: 0;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 765px){
+    .container{
+        width: 380px;
+    }
+
+    .title{
+        font-size: 24px;
+    }
+}
+
+
+
+@media screen and (max-width: 425px){
+    .title{
+        font-size: 20px;
+    }
+
+    .container{
+        width: 290px;
+    }
+}
