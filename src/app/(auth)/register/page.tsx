@@ -1,5 +1,5 @@
-import styles from './page.module.css';
 import RegisterForm from '@(auth)/register/components/RegisterForm/RegisterForm';
+import styles from './page.module.css';
 
 export default function Register() {
   return (

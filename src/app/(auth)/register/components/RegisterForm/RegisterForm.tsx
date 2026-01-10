@@ -1,13 +1,13 @@
 'use client';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
-import { useId } from 'react';
-import Link from 'next/link';
-import styles from './RegisterForm.module.css';
-import { useRouter } from 'next/navigation';
-import axios, { AxiosError } from 'axios';
 import * as Yup from 'yup';
+import axios, { AxiosError } from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { useId, useState } from 'react';
 import { EMAIL_REGEX } from 'valibot';
+import styles from './RegisterForm.module.css';
 
 interface RegisterFormValues {
   fullName: string;
@@ -22,6 +22,14 @@ interface ApiErrorResponse {
 
 export default function RegisterForm() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState<boolean>(false);
+
+  const handleChangePassword = () => setShowPassword(!showPassword);
+
+  const handleChangeConfirmPassword = () =>
+    setShowConfirmPassword(!showConfirmPassword);
 
   const fieldId = {
     fullName: useId(),
@@ -128,12 +136,26 @@ export default function RegisterForm() {
               <Field
                 className={`${styles.label_field} ${
                   touched.password && errors.password ? styles.field_error : ''
-                }`}
-                type="password"
+                } ${styles.label_field_pwd}`}
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 id={fieldId.password}
               />
-
+              <button
+                type="button"
+                className={styles.password_btn}
+                onClick={handleChangePassword}
+              >
+                {showPassword ? (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye"></use>
+                  </svg>
+                ) : (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye-hide"></use>
+                  </svg>
+                )}
+              </button>
               {touched.password && errors.password && (
                 <span className={styles.error_message}>{errors.password}</span>
               )}
@@ -145,12 +167,26 @@ export default function RegisterForm() {
                   touched.confirmPassword && errors.confirmPassword
                     ? styles.field_error
                     : ''
-                }`}
-                type="password"
+                } ${styles.label_field_pwd}`}
+                type={showConfirmPassword ? 'text' : 'password'}
                 name="confirmPassword"
                 id={fieldId.confirmPassword}
               />
-
+              <button
+                type="button"
+                className={styles.password_btn}
+                onClick={handleChangeConfirmPassword}
+              >
+                {showConfirmPassword ? (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye"></use>
+                  </svg>
+                ) : (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye-hide"></use>
+                  </svg>
+                )}
+              </button>
               {touched.confirmPassword && errors.confirmPassword && (
                 <span className={styles.error_message}>
                   {errors.confirmPassword}
@@ -162,7 +198,7 @@ export default function RegisterForm() {
             </button>
             <p className={styles.paragraph}>
               Already have an account?{' '}
-              <Link className={styles.register_link} href="/login">
+              <Link className={styles.login_link} href="/login">
                 Log in
               </Link>
             </p>

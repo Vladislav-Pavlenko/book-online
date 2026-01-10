@@ -1,13 +1,13 @@
 'use client';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
-import { useId } from 'react';
-import Link from 'next/link';
-import styles from './LoginForm.module.css';
 import * as Yup from 'yup';
-import { EMAIL_REGEX } from 'valibot';
-import { useRouter } from 'next/navigation';
-import toast, { Toaster } from 'react-hot-toast';
 import axios, { AxiosError } from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { useId, useState } from 'react';
+import { EMAIL_REGEX } from 'valibot';
+import styles from './LoginForm.module.css';
 
 interface LoginFormValues {
   email: string;
@@ -22,8 +22,16 @@ interface ServerErrorResponse {
 }
 
 export default function LoginForm() {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const router = useRouter();
-  const UserSchema = Yup.object().shape({
+
+  const fieldId = {
+    email: useId(),
+    password: useId(),
+    signedIn: useId(),
+  };
+
+  const LoginSchema = Yup.object().shape({
     email: Yup.string()
       .matches(EMAIL_REGEX, {
         message: 'Invalid email address (e.g. user@example.com)',
@@ -35,20 +43,16 @@ export default function LoginForm() {
       .required('Password is required'),
   });
 
-  const fieldId = {
-    email: useId(),
-    password: useId(),
-    signedIn: useId(),
-  };
+  const handleChangePassword = () => setShowPassword(!showPassword);
 
   const handleSubmit = async (
     values: LoginFormValues,
     { setSubmitting }: FormikHelpers<LoginFormValues>
   ) => {
     const toastId = toast.loading('Logging in...');
+
     try {
       await axios.post('/api/auth/login', values);
-
       toast.success('Login successful!', { id: toastId });
 
       setTimeout(() => {
@@ -78,8 +82,8 @@ export default function LoginForm() {
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <Formik
-        initialValues={{ email: '', password: '', signedIn: false }}
-        validationSchema={UserSchema}
+        initialValues={{ email: '', password: '', signedIn: true }}
+        validationSchema={LoginSchema}
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
@@ -98,17 +102,33 @@ export default function LoginForm() {
                 <span className={styles.error_message}>{errors.email}</span>
               )}
             </label>
+
             <label className={styles.label} htmlFor={fieldId.password}>
               <span className={styles.label_span}>Password</span>
               <Field
                 className={`${styles.label_field} ${
                   touched.password && errors.password ? styles.field_error : ''
-                }`}
-                type="password"
+                } ${styles.label_field_pwd}`}
+                type={showPassword ? 'text' : 'password'}
                 name="password"
                 id={fieldId.password}
                 suppressHydrationWarning={true}
               />
+              <button
+                type="button"
+                className={styles.password_btn}
+                onClick={handleChangePassword}
+              >
+                {showPassword ? (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye"></use>
+                  </svg>
+                ) : (
+                  <svg className={styles.password_icon} width="30" height="30">
+                    <use href="/img/icons.svg#eye-hide"></use>
+                  </svg>
+                )}
+              </button>
               {touched.password && errors.password && (
                 <span className={styles.error_message}>{errors.password}</span>
               )}

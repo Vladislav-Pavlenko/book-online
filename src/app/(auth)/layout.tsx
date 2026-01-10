@@ -1,5 +1,5 @@
-import Header from '@(auth)/components/Header/Header';
 import Image from 'next/image';
+import Header from '@(auth)/components/Header/Header';
 
 export default function RootLayout({
   children,

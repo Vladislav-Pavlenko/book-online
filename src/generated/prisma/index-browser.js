@@ -128,6 +128,8 @@ exports.Prisma.UserScalarFieldEnum = {
   gender: 'gender',
   birthDate: 'birthDate',
   avatarUrl: 'avatarUrl',
+  resetToken: 'resetToken',
+  resetTokenExpiry: 'resetTokenExpiry',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
