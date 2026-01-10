@@ -1,0 +1,123 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+}
+
+.label{
+    position: relative;
+}
+
+.label_span{
+    position: absolute;
+    top: -10px;
+    left: 17px;
+    padding: 0 5px;
+    background-color: #fff;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.label_field{
+    padding: 5px 10px;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #181821;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    &:active,
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+.field_error{
+    border: 2px solid darkred;
+}
+
+.button{
+    color:#FFF;
+    font-size: 20px;
+    font-weight: 700;
+
+    padding: 10px 127px;
+    border-radius: 10px;
+    background-color: #009FFF;
+    transition: background-color 250ms ease-in-out;
+
+    &:hover,
+    &:focus-visible{
+        background-color: #39B5FF;
+    }
+}
+
+.resend_btn{
+    color: #39B5FF;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+
+    transition: background-color 250ms ease-in-out;
+
+    &:hover,
+    &:focus-visible{
+        color: #009FFF;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .form{
+        width: 340px;
+        margin: 0 auto;
+    }
+
+    .label_field{
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .label_span{
+        font-size: 14px;
+    }
+
+    .button{
+        padding: 10px 60px;
+        font-size: 18px;
+    }
+
+    .resend_btn{
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .form{
+        width: 250px;
+    }
+
+    .label_field{
+        height: 40px;
+        font-size: 16px;
+        background-color: #fff;
+    }
+
+    .label_span{
+        background-color: #fff;
+    }
+
+
+    .button{
+        padding: 10px 30px;
+    }
+}
