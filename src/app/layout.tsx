@@ -15,7 +15,8 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   title: 'Book online',
-  description: 'Read your favorite book online',
+  description:
+    '"Book Online – Your Ultimate Digital Library." Discover, read, and organize your favorite books in one seamless platform. Dive into stories anytime, anywhere.',
 };
 
 export default function RootLayout({
