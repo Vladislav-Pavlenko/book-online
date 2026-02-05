@@ -56,7 +56,7 @@ export default function LoginForm() {
       toast.success('Login successful!', { id: toastId });
 
       setTimeout(() => {
-        router.push('/');
+        router.push('/home');
         router.refresh();
       }, 1000);
     } catch (err) {
