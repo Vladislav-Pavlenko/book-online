@@ -1,0 +1,9 @@
+.main {
+    height: 66vh;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        height: 72vh;
+    }
+}

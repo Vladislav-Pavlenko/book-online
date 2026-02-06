@@ -2,6 +2,7 @@
     display: flex;
     padding: 30px 50px;
     gap: 30px;
+    margin-left: 119px;
 }
 
 .search_label {
@@ -81,4 +82,67 @@
 .notification_icon {
     fill: transparent;
     stroke: #181821;
+}
+
+@media screen and (max-width: 1095px) {
+    .header {
+        padding: 25px 30px;
+        gap: 15px;
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .user_fullname {
+        max-width: 145px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 20px 30px;
+        margin-left: 0;
+    }
+
+    .lang_btn {
+        display: none;
+    }
+
+    .user_name {
+        width: 45px;
+        height: 45px;
+    }
+
+    .user_fullname {
+        font-size: 18px;
+    }
+
+    .notification_icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .search_icon {
+        margin-right: 10px;
+    }
+
+    .user_fullname {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .header {
+        padding: 10px;
+    }
+
+    .search_input {
+        max-width: 150px;
+    }
 }
