@@ -1,0 +1,34 @@
+.footer {
+    padding: 52px 0 62px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.logo_icon {
+    stroke: #181821;
+    fill: transparent;
+}
+
+.description {
+    letter-spacing: -0.205px;
+
+    max-width: 500px;
+}
+
+.list {
+    display: flex;
+    gap: 39px;
+}
+
+.li {
+}
+.list_link {
+}

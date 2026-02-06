@@ -1,4 +1,6 @@
-import Sidebar from '@/app/(main)/components/Sidebar/Sidebar';
+import Sidebar from '@(main)/components/Sidebar/Sidebar';
+import Header from '@(main)/components/Header/Header';
+import Footer from '@(main)/components/Footer/Footer';
 
 export default function RootLayout({
   children,
@@ -8,7 +10,11 @@ export default function RootLayout({
   return (
     <>
       <Sidebar />
-      {children}
+      <div className="d-flex flex-column w-full">
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </>
   );
 }

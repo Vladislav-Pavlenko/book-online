@@ -22,7 +22,8 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/app/components/*"],
       "@api/*": ["./src/app/api/*"],
-      "@(auth)/*": ["./src/app/(auth)/*"]
+      "@(auth)/*": ["./src/app/(auth)/*"],
+      "@(main)/*": ["./src/app/(main)/*"]
     }
   },
   "include": [

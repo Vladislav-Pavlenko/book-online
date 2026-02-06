@@ -7,7 +7,7 @@
     height: 100vh;
 }
 
-.link_icon {
+.logo_icon {
     stroke: #181821;
     fill: transparent;
 }
@@ -30,11 +30,10 @@
     transition: 350ms ease-in-out;
 
     &:hover,
-    :focus-visible{
+    :focus-visible {
         background-color: #ff8686;
     }
 }
-
 
 .nav_icon {
     fill: transparent;
@@ -45,11 +44,11 @@
     background-color: #ff6d6d;
 
     &:hover,
-    :focus-visible{
+    :focus-visible {
         background-color: rgb(250, 93, 93);
     }
 
     .nav_icon {
-      stroke: #f1eee3;
+        stroke: #f1eee3;
     }
 }

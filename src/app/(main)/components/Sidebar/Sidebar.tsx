@@ -8,8 +8,8 @@ export default function Sidebar() {
   const pathName = usePathname();
   return (
     <aside className={styles.aside}>
-      <Link className={styles.link} href="/home">
-        <svg className={styles.link_icon} width="60" height="60">
+      <Link className={styles.logo_link} href="/home">
+        <svg className={styles.logo_icon} width="60" height="60">
           <use href="/img/icons.svg#logo"></use>
         </svg>
       </Link>
