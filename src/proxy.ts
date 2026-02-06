@@ -6,6 +6,13 @@ export async function proxy(req: NextRequest) {
   const token = req.cookies.get('token')?.value;
   const publicRoutes = ['/login', '/register', '/forgot-password'];
 
+  if (pathname === '/') {
+    if (token) {
+      return NextResponse.redirect(new URL('/home', req.url));
+    }
+    return NextResponse.redirect(new URL('/login', req.url));
+  }
+
   const isPublicRoute = publicRoutes.includes(pathname);
 
   if (!isPublicRoute && !token) {
