@@ -102,6 +102,19 @@ export default function Sidebar() {
                 </svg>
               </Link>
             </li>
+            <li className={styles.nav_li}>
+              <Link
+                className={clsx(
+                  styles.nav_link,
+                  pathName === '/new' && styles.active
+                )}
+                href="/new"
+              >
+                <svg className={styles.nav_icon} width="40" height="40">
+                  <use href="/img/icons.svg#plus"></use>
+                </svg>
+              </Link>
+            </li>
           </ul>
         </nav>
       </aside>

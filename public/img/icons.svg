@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
+    <symbol id="plus" viewBox="0 0 32 32">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 5v22M5 16h22"/>
+    </symbol>
     <symbol id="archive-add" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M19.333 14.2h-6.667M16 10.947v6.667" style="stroke:var(--color1, #fff)"/>
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.427 2.667H9.574a5.159 5.159 0 0 0-5.147 5.147v18.787c0 2.4 1.72 3.413 3.827 2.253l6.507-3.613c.693-.387 1.813-.387 2.493 0l6.507 3.613c2.107 1.173 3.827.16 3.827-2.253V7.814c-.013-2.827-2.32-5.147-5.16-5.147z" style="stroke:var(--color1, #fff)"/>
