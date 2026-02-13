@@ -1,0 +1,31 @@
+.main {
+    padding: 120px 0 100px;
+    margin-left: 119px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin: 0 0 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1095px) {
+    .main {
+        margin-left: 90px;
+        padding: 60px 40px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        margin-left: 0;
+        padding: 40px 20px;
+    }
+}

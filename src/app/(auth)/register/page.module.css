@@ -1,4 +1,4 @@
-.main{
+.main {
     position: absolute;
     top: 0;
     right: 0;
@@ -11,61 +11,59 @@
     width: 100%;
 }
 
-.title{
+.title {
     margin: 0;
     font-size: 30px;
     font-weight: 700;
 }
 
-.description{
+.description {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.container{
+.container {
     width: 440px;
 }
 
-@media screen and (max-width: 1440px){
-    .main{
+@media screen and (max-width: 1440px) {
+    .main {
         padding-right: 10%;
     }
 }
 
-@media screen and (max-width: 1200px){
-    .container{
+@media screen and (max-width: 1200px) {
+    .container {
         background-color: #fff;
         padding: 20px;
         border-radius: 16px;
     }
 }
 
-@media screen and (max-width: 1095px){
-    .main{
+@media screen and (max-width: 1095px) {
+    .main {
         padding-right: 0;
         justify-content: center;
     }
 }
 
-@media screen and (max-width: 768px){
-    .container{
+@media screen and (max-width: 768px) {
+    .container {
         width: 380px;
     }
 
-    .title{
+    .title {
         font-size: 24px;
     }
 }
 
-
-
-@media screen and (max-width: 425px){
-    .title{
+@media screen and (max-width: 425px) {
+    .title {
         font-size: 20px;
     }
 
-    .container{
+    .container {
         width: 290px;
     }
 }

@@ -43,15 +43,16 @@ model Book {
   id          String    @id @default(cuid())
   title       String
   description String?
-  coverUrl    String?
   publishedAt DateTime?
 
-  addedById String?
+  coverData Bytes?
+  fileData  Bytes?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  addedBy User? @relation("UserAddedBooks", fields: [addedById], references: [id], onDelete: SetNull)
+  user   User?   @relation("UserAddedBooks", fields: [userId], references: [id], onDelete: SetNull)
+  userId String?
 
   authors         BookAuthor[]
   categories      BookCategory[]
@@ -64,7 +65,7 @@ model Book {
 // AUTHOR
 model Author {
   id   String  @id @default(cuid())
-  name String
+  name String  @unique
   bio  String?
 
   books BookAuthor[]

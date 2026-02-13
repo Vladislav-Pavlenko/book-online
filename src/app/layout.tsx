@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Quicksand } from 'next/font/google';
+import { DM_Sans, Quicksand, Comfortaa } from 'next/font/google';
 import './reset.css';
 import './globals.css';
 
