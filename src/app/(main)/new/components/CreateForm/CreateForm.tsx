@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import axios, { AxiosError } from 'axios';
 
 const dateRegex = /^\d{2}\.\d{2}\.\d{4}$/;
-const nameRegex = /^[A-Za-zА-Яа-яЇїІіЄєҐґ\s\-]+$/;
+const nameRegex = /^[A-Za-zА-Яа-яЇїІіЄєҐґ\s\-’'ʼ]+$/;
 
 interface BookFormValues {
   title: string;
