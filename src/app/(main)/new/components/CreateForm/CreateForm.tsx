@@ -19,6 +19,10 @@ interface BookFormValues {
   bookFile: File | null;
 }
 
+interface ApiErrorResponse {
+  message: string;
+}
+
 export default function CreateForm() {
   const coverRef = useRef<HTMLInputElement | null>(null);
   const bookRef = useRef<HTMLInputElement | null>(null);
@@ -76,10 +80,6 @@ export default function CreateForm() {
     coverImg: useId(),
     bookFile: useId(),
   };
-
-  interface ApiErrorResponse {
-    message: string;
-  }
 
   const handleSubmit = async (
     values: BookFormValues,
