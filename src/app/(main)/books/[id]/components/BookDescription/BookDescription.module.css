@@ -1,0 +1,15 @@
+.description {
+    margin-bottom: 50px;
+}
+
+.button {
+    color: #009fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+        color: #39b5ff;
+    }
+}

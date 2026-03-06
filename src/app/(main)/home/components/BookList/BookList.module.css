@@ -40,11 +40,7 @@
 }
 
 .ul::-webkit-scrollbar {
-    height: 4px;
-}
-.ul::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
+    height: 0;
 }
 
 .li {

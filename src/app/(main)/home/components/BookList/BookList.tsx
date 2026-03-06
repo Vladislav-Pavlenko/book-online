@@ -13,16 +13,14 @@ interface BookListProps {
   content: string;
 }
 
-type AuthorRelation = {
-  id: string;
-  name: string;
-  bio: string | null;
-};
-
 interface Book {
   id: string;
   title: string;
-  authors: AuthorRelation[];
+  authors: {
+    id: string;
+    name: string;
+    bio: string | null;
+  }[];
   coverData: string;
 }
 
@@ -107,7 +105,7 @@ export default function BookList({ title, content }: BookListProps) {
         <ul className={clsx(styles.ul, viewAll && styles.ul_all)}>
           {books.map((book) => (
             <li className={styles.li} key={book.id}>
-              <Link className={styles.link} href="/">
+              <Link className={styles.link} href={`/books/${book.id}`}>
                 <Image
                   className={styles.li_img}
                   src={book.coverData}
