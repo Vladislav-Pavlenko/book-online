@@ -1,0 +1,98 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal {
+    width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.close_btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.label {
+    position: relative;
+}
+
+.label_span {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #181821;
+    resize: none;
+    font-size: 15px;
+
+    &:active,
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.error {
+    border: 2px solid darkred;
+}
+
+.error_message {
+    color: darkred;
+    font-size: 12px;
+}
+
+.button {
+    background: #009fff;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #39b5ff;
+}
+
+.close_icon {
+    stroke: #181821;
+}

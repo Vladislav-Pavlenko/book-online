@@ -1,13 +1,20 @@
 .header {
     display: flex;
+    align-items: center;
     padding: 30px 50px;
     gap: 30px;
     margin-left: 119px;
 }
 
+.search_wrapper {
+    position: relative;
+    margin-right: auto;
+    flex-grow: 1;
+    max-width: 450px;
+}
+
 .search_label {
     display: flex;
-    margin-right: auto;
     align-items: center;
 }
 
@@ -15,6 +22,7 @@
     fill: transparent;
     stroke: #181821;
     margin-right: 15px;
+    flex-shrink: 0;
 }
 
 .search_input {
@@ -23,28 +31,119 @@
     border: none;
     background-color: transparent;
     padding: 0;
+    width: 100%;
 
     &:focus {
         box-shadow: none;
+        outline: none;
     }
 }
 
-.lang_btn {
+.search_dropdown {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.dropdown_message {
+    padding: 16px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.dropdown_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.dropdown_item a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown_item a:hover {
+    background-color: #f3f4f6;
+}
+
+.book_result {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.book_mini_cover {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.book_cover_placeholder {
+    width: 40px;
+    height: 60px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.book_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.book_title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book_author {
+    margin: 0;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.logout_btn {
     display: flex;
     align-items: center;
     gap: 12px;
     padding: 10px 20px;
-
     border-radius: 50px;
     border: 2px solid #009fff;
-    background-color: #fff;
-
+    background-color: #ffffff;
     font-size: 20px;
     font-weight: 700;
-}
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 
-.lang_image {
-    height: 16px;
+    &:hover,
+    &:focus {
+        border: 2px solid #63c8ff;
+        background-color: #009fff;
+        color: #fff;
+    }
 }
 
 .user_container {
@@ -69,9 +168,9 @@
     border-radius: 60px;
     border: 2px solid #181821;
     background-color: #ff6d6d;
-
     font-size: 32px;
     font-weight: 700;
+    color: #181821;
 }
 
 .user_fullname {
@@ -82,6 +181,7 @@
 .notification_icon {
     fill: transparent;
     stroke: #181821;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1095px) {
@@ -95,6 +195,9 @@
 @media screen and (max-width: 810px) {
     .user_fullname {
         max-width: 145px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -104,11 +207,17 @@
         margin-left: 0;
     }
 
-    .lang_btn {
-        display: none;
+    .logout_btn {
+        font-size: 14px;
     }
 
     .user_name {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .user_image {
         width: 45px;
         height: 45px;
     }
@@ -128,12 +237,22 @@
         padding: 15px 20px;
     }
 
+    .logout_btn {
+        font-size: 14px;
+        padding: 10px;
+        width: 87px;
+    }
+
     .search_icon {
         margin-right: 10px;
     }
 
     .user_fullname {
         display: none;
+    }
+
+    .search_wrapper {
+        max-width: 100%;
     }
 }
 

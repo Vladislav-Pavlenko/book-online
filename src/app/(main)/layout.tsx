@@ -4,9 +4,9 @@ import Footer from '@(main)/components/Footer/Footer';
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <>
       <Sidebar />

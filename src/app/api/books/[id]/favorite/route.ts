@@ -4,7 +4,7 @@ import { prisma } from '@api/prisma/prisma';
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { id: bookId } = await params;
   const token = req.cookies.get('token')?.value;
@@ -40,7 +40,7 @@ export async function GET(
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const { id: bookId } = await params;
 

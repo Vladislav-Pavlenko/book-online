@@ -35,10 +35,6 @@ const emptyBook: Book = {
     fullName: '',
   },
   averageRating: 0,
-  progress: {
-    currentPage: 0,
-    totalPages: null,
-  },
   commentsCount: 0,
 };
 
@@ -60,10 +56,6 @@ interface Book {
     fullName: string;
   };
   averageRating: number;
-  progress: {
-    currentPage: number;
-    totalPages: number | null;
-  };
   commentsCount: number;
 }
 
@@ -140,7 +132,6 @@ export default function Book() {
                 author={book.authors}
                 genre={book.categories}
                 addedBy={book.addedBy.fullName}
-                progress={book.progress}
               />
               <BookToolbar title={book.title} bookId={bookId} />
               <BookDescription description={book.description} />

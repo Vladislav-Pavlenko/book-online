@@ -50,7 +50,6 @@ export default function BookComments({
       setIsLoading(true);
       try {
         const response = await axios.get(`/api/books/${bookId}/comments`);
-        console.log(response.data.comments);
         setComments(response.data.comments);
       } catch (error) {
         if (axios.isAxiosError(error)) {

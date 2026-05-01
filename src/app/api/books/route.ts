@@ -63,7 +63,6 @@ export async function GET(req: NextRequest) {
       const recentBooks = await prisma.book.findMany({
         where: {
           ...where,
-          createdAt: { gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
         },
         select: {
           id: true,

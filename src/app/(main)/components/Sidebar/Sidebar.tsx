@@ -34,20 +34,6 @@ export default function Sidebar() {
           </svg>
         </Link>
 
-        <button
-          className={clsx(styles.lang_btn, isOpen && styles.visible)}
-          type="button"
-        >
-          EN
-          <Image
-            className={styles.lang_image}
-            src="/img/english.png"
-            alt="English"
-            width="25"
-            height="16"
-          />
-        </button>
-
         <nav className={clsx(styles.nav, isOpen && styles.visible)}>
           <ul className={styles.nav_list}>
             <li className={styles.nav_li}>
@@ -73,32 +59,6 @@ export default function Sidebar() {
               >
                 <svg className={styles.nav_icon} width="40" height="40">
                   <use href="/img/icons.svg#history"></use>
-                </svg>
-              </Link>
-            </li>
-            <li className={styles.nav_li}>
-              <Link
-                className={clsx(
-                  styles.nav_link,
-                  pathName === '/saves' && styles.active
-                )}
-                href="/saves"
-              >
-                <svg className={styles.nav_icon} width="40" height="40">
-                  <use href="/img/icons.svg#save-1"></use>
-                </svg>
-              </Link>
-            </li>
-            <li className={styles.nav_li}>
-              <Link
-                className={clsx(
-                  styles.nav_link,
-                  pathName === '/settings' && styles.active
-                )}
-                href="/settings"
-              >
-                <svg className={styles.nav_icon} width="40" height="40">
-                  <use href="/img/icons.svg#setting"></use>
                 </svg>
               </Link>
             </li>

@@ -1,0 +1,34 @@
+.main {
+    position: relative;
+    margin-left: 119px;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    padding: 50px 100px 100px;
+}
+
+@media screen and (max-width: 1380px) {
+    .main {
+        margin-left: 110px;
+    }
+}
+
+@media screen and (max-width: 1095px) {
+    .main {
+        margin-left: 90px;
+        padding: 60px 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        margin-left: 0;
+        padding: 40px 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 30px 15px;
+    }
+}

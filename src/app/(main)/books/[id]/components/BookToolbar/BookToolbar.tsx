@@ -96,7 +96,7 @@ export default function BookToolbar({ title, bookId }: BookToolbarProps) {
   return (
     <div className={styles.toolbar}>
       <Toaster position="top-right" reverseOrder={false} />
-      <Link className={styles.link} href="/">
+      <Link className={styles.link} href={`/books/${bookId}/read`}>
         <svg className={styles.link_icon} width="30" height="30">
           <use href="/img/icons.svg#book"></use>
         </svg>

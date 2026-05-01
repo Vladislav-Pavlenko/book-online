@@ -11,18 +11,9 @@ interface BookInfoProps {
     name: string;
   }[];
   addedBy: string;
-  progress: {
-    currentPage: number;
-    totalPages: number | null;
-  };
 }
 
-export default function BookInfo({
-  author,
-  genre,
-  addedBy,
-  progress,
-}: BookInfoProps) {
+export default function BookInfo({ author, genre, addedBy }: BookInfoProps) {
   return (
     <ul className={styles.list}>
       <li className={styles.li}>
@@ -40,12 +31,6 @@ export default function BookInfo({
       <li className={styles.li}>
         <h4 className={styles.li_title}>Added by</h4>
         <p className={styles.li_content}>{addedBy}</p>
-      </li>
-      <li className={styles.li}>
-        <h4 className={styles.li_title}>Progress</h4>
-        <p
-          className={styles.li_content}
-        >{`${progress.currentPage} / ${progress.totalPages}`}</p>
       </li>
     </ul>
   );
