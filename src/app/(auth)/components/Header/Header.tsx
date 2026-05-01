@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -11,17 +10,6 @@ export default function Header() {
         </svg>
         BookOnline
       </Link>
-
-      <button className={styles.btn} type="button">
-        EN
-        <Image
-          className={styles.image}
-          src="/img/english.png"
-          alt="English"
-          width="25"
-          height="16"
-        />
-      </button>
     </header>
   );
 }
