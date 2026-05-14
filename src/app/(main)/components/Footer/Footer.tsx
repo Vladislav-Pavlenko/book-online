@@ -18,19 +18,15 @@ export default function Footer() {
       </div>
       <ul className={styles.list}>
         <li className={styles.li}>
-          <Link className={styles.list_link} href="">
-            Copyright © 2020. LogoIpsum. All rights reserved.
-          </Link>
+          <p className={styles.list_link}>
+            Copyright © 2026. LogoIpsum. All rights reserved.
+          </p>
         </li>
         <li className={styles.li}>
-          <Link className={styles.list_link} href="">
-            Terms & Conditions
-          </Link>
+          <p className={styles.list_link}>Terms & Conditions</p>
         </li>
         <li className={styles.li}>
-          <Link className={styles.list_link} href="">
-            Privacy Policy
-          </Link>
+          <p className={styles.list_link}>Privacy Policy</p>
         </li>
       </ul>
     </footer>
